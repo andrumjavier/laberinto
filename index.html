@@ -7,72 +7,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="juego">
-    <h1>♻️ Lleva la botella a la caneca</h1>
-    <p id="instrucciones">Arrastra la botella 🥤 hasta la caneca. ¡No toques las paredes!</p>
 
-    <div id="laberinto">
-      <!-- ===== BORDES EXTERNOS ===== -->
-      <div class="pared" style="top: 0;    left: 0;    width: 800px; height: 20px;"></div>
-      <div class="pared" style="top: 0;    left: 0;    width: 20px;  height: 600px;"></div>
-      <div class="pared" style="top: 0;    left: 780px; width: 20px; height: 600px;"></div>
-      <div class="pared" style="top: 580px; left: 0;    width: 800px; height: 20px;"></div>
-
-      <!-- ===== PAREDES INTERNAS ===== -->
-      <!-- Diseño con pasillos anchos (80px mínimo entre paredes) -->
-
-      <!-- Bloque superior izquierdo -->
-      <div class="pared" style="top: 20px;  left: 140px; width: 20px;  height: 180px;"></div>
-      <div class="pared" style="top: 180px; left: 140px; width: 200px; height: 20px;"></div>
-
-      <!-- Bloque superior central -->
-      <div class="pared" style="top: 20px;  left: 420px; width: 20px;  height: 140px;"></div>
-      <div class="pared" style="top: 140px; left: 420px; width: 180px; height: 20px;"></div>
-
-      <!-- Bloque superior derecho -->
-      <div class="pared" style="top: 20px;  left: 660px; width: 20px;  height: 220px;"></div>
-      <div class="pared" style="top: 220px; left: 660px; width: 100px; height: 20px;"></div>
-
-      <!-- Bloque medio izquierdo -->
-      <div class="pared" style="top: 260px; left: 20px;  width: 160px; height: 20px;"></div>
-      <div class="pared" style="top: 260px; left: 160px; width: 20px;  height: 160px;"></div>
-      <div class="pared" style="top: 400px; left: 20px;  width: 160px; height: 20px;"></div>
-
-      <!-- Bloque medio central -->
-      <div class="pared" style="top: 260px; left: 340px; width: 20px;  height: 180px;"></div>
-      <div class="pared" style="top: 420px; left: 340px; width: 200px; height: 20px;"></div>
-
-      <!-- Bloque medio derecho -->
-      <div class="pared" style="top: 300px; left: 540px; width: 20px;  height: 160px;"></div>
-      <div class="pared" style="top: 300px; left: 540px; width: 140px; height: 20px;"></div>
-
-      <!-- Bloque inferior -->
-      <div class="pared" style="top: 480px; left: 20px;  width: 100px; height: 20px;"></div>
-      <div class="pared" style="top: 480px; left: 240px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 480px; left: 440px; width: 20px;  height: 100px;"></div>
-
-      <!-- ===== OBJETO ARRASTRABLE (BOTELLA) ===== -->
-      <div id="objeto">🥤</div>
-
-      <!-- ===== CANECA (META) - FIJA ===== -->
-      <div id="meta">
-        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933263.png" alt="Caneca de basura">
-      </div>
+  <!-- ================= MENÚ DE INICIO ================= -->
+  <div id="menu" class="pantalla">
+    <h1>♻️ Laberinto Reciclaje</h1>
+    <p>Lleva la botella 🥤 hasta la caneca 🗑️ sin tocar las paredes.</p>
+    <div class="botones-menu">
+      <button onclick="iniciarNivel(1)">🟢 Nivel Fácil</button>
+      <button onclick="iniciarNivel(2)">🟡 Nivel Medio</button>
+      <button onclick="iniciarNivel(3)">🔴 Nivel Difícil</button>
     </div>
   </div>
 
-  <!-- Pantalla de derrota -->
+  <!-- ================= JUEGO ================= -->
+  <div id="juego" class="oculto">
+    <h1 id="titulo-nivel">Nivel 1 - Fácil</h1>
+    <p id="instrucciones">Arrastra la botella 🥤 hasta la caneca. ¡No toques las paredes!</p>
+
+    <div id="laberinto">
+      <!-- Las paredes se generan desde JavaScript según el nivel -->
+
+      <!-- Objeto arrastrable -->
+      <div id="objeto">🥤</div>
+
+      <!-- Caneca (meta) -->
+      <div id="meta">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933263.png" alt="Caneca">
+      </div>
+    </div>
+
+    <button id="btn-menu" onclick="volverAlMenu()">⬅ Volver al menú</button>
+  </div>
+
+  <!-- ================= PANTALLA PERDISTE ================= -->
   <div id="perdiste" class="pantalla oculto">
     <h2>💥 ¡Perdiste!</h2>
     <p>Tocaste una pared</p>
-    <button onclick="reiniciar()">Intentar de nuevo</button>
+    <button onclick="reiniciarNivel()">🔄 Intentar de nuevo</button>
+    <button onclick="volverAlMenu()">🏠 Menú principal</button>
   </div>
 
-  <!-- Pantalla de victoria -->
+  <!-- ================= PANTALLA GANASTE ================= -->
   <div id="ganaste" class="pantalla oculto">
     <h2>🎉 ¡Ganaste!</h2>
-    <p>¡Llevaste la botella a la caneca!</p>
-    <button onclick="reiniciar()">Jugar otra vez</button>
+    <p id="mensaje-ganaste">¡Llevaste la botella a la caneca!</p>
+    <button id="btn-siguiente" onclick="siguienteNivel()">➡ Siguiente nivel</button>
+    <button onclick="volverAlMenu()">🏠 Menú principal</button>
   </div>
 
   <script src="script.js"></script>
