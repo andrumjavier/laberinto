@@ -7,7 +7,7 @@ const pantallaGanaste = document.getElementById("ganaste");
 
 let arrastrando = false;
 let offsetX = 0, offsetY = 0;
-let posX = 40, posY = 240; // posición inicial
+let posX = 30, posY = 30; // posición inicial
 
 // Eventos del mouse
 objeto.addEventListener("mousedown", iniciarArrastre);
