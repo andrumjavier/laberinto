@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.oculto { display: none !important; }
+
+/* ====== PANTALLAS ====== */
+.pantalla {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.98);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 100;
+  padding: 20px;
+  text-align: center;
+}
+
+.pantalla h1 {
+  font-size: 46px;
+  margin-bottom: 10px;
+  color: #60a5fa;
+}
+
+.pantalla h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #f87171;
+}
+
+.pantalla p {
+  font-size: 18px;
+  color: #cbd5e1;
+  max-width: 500px;
+}
+
+.pantalla strong {
+  color: #60a5fa;
+}
+
+.pantalla button {
+  padding: 14px 32px;
+  font-size: 18px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 12px;
+  min-width: 220px;
+}
+
+.pantalla button:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+.btn-volver {
+  background: #475569 !important;
+}
+
+.btn-volver:hover {
+  background: #64748b !important;
+}
+
+/* ====== JUEGO ====== */
+#juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#hud {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #60a5fa;
+  background: #1e293b;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 2px solid #334155;
+}
+
+#cancha {
+  position: relative;
+  width: 700px;
+  height: 500px;
+  background: linear-gradient(to bottom, #1e293b, #0f172a);
+  border: 3px solid #334155;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(96, 165, 250, 0.2);
+}
+
+/* Líneas decorativas del suelo */
+#cancha::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    to right,
+    #60a5fa 0,
+    #60a5fa 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  opacity: 0.4;
+}
+
+#jugador {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  font-size: 42px;
+  line-height: 50px;
+  text-align: center;
+  bottom: 20px;
+  left: 325px;
+  z-index: 10;
+  transition: transform 0.05s;
+}
+
+.obstaculo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  top: -50px;
+  z-index: 5;
+}
+
+#ayuda {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+#btn-menu {
+  padding: 8px 18px;
+  font-size: 14px;
+  background: #475569;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn-menu:hover {
+  background: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 780px) {
+  #cancha {
+    width: 90vw;
+    height: 65vw;
+    max-width: 700px;
+    max-height: 500px;
+  }
+
+  .pantalla h1 { font-size: 32px; }
+  .pantalla h2 { font-size: 30px; }
+  #hud { font-size: 15px; gap: 15px; padding: 8px 15px; }
+}
