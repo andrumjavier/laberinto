@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laberinto - Lleva la basura a la caneca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="juego">
+    <h1>♻️ Lleva la basura a la caneca</h1>
+    <p id="instrucciones">Arrastra el objeto 🗑️ hasta la caneca. ¡No toques las paredes!</p>
+
+    <div id="laberinto">
+      <!-- Paredes -->
+      <div class="pared" style="top: 0;   left: 0;   width: 500px; height: 20px;"></div>
+      <div class="pared" style="top: 0;   left: 0;   width: 20px;  height: 300px;"></div>
+      <div class="pared" style="top: 0;   left: 480px; width: 20px;  height: 300px;"></div>
+      <div class="pared" style="top: 280px; left: 0;   width: 500px; height: 20px;"></div>
+
+      <div class="pared" style="top: 80px;  left: 20px;  width: 300px; height: 20px;"></div>
+      <div class="pared" style="top: 80px;  left: 300px; width: 20px;  height: 150px;"></div>
+      <div class="pared" style="top: 200px; left: 180px; width: 320px; height: 20px;"></div>
+      <div class="pared" style="top: 140px; left: 180px; width: 20px;  height: 80px;"></div>
+
+      <!-- Objeto arrastrable -->
+      <div id="objeto">🗑️</div>
+
+      <!-- Meta -->
+      <div id="meta">🏁</div>
+    </div>
+  </div>
+
+  <!-- Pantalla de derrota -->
+  <div id="perdiste" class="pantalla oculto">
+    <h2>💥 ¡Perdiste!</h2>
+    <p>Tocaste una pared</p>
+    <button onclick="reiniciar()">Intentar de nuevo</button>
+  </div>
+
+  <!-- Pantalla de victoria -->
+  <div id="ganaste" class="pantalla oculto">
+    <h2>🎉 ¡Ganaste!</h2>
+    <p>Llevaste la basura a la caneca</p>
+    <button onclick="reiniciar()">Jugar otra vez</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
