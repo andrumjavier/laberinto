@@ -1,0 +1,85 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#juego { text-align: center; }
+
+h1 { margin-bottom: 10px; font-size: 24px; }
+#instrucciones { margin-bottom: 20px; color: #94a3b8; font-size: 14px; }
+
+#laberinto {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  background: #f8fafc;
+  border: 3px solid #0f172a;
+  border-radius: 8px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.pared {
+  position: absolute;
+  background: #334155;
+  border-radius: 3px;
+}
+
+#objeto {
+  position: absolute;
+  top: 240px;
+  left: 40px;
+  font-size: 32px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.05s;
+  z-index: 10;
+}
+
+#objeto:active { cursor: grabbing; }
+
+#meta {
+  position: absolute;
+  top: 240px;
+  left: 440px;
+  font-size: 32px;
+  user-select: none;
+}
+
+/* Pantallas de resultado */
+.pantalla {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 100;
+}
+
+.pantalla.oculto { display: none; }
+
+.pantalla h2 { font-size: 48px; }
+
+.pantalla button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pantalla button:hover { background: #2563eb; }
