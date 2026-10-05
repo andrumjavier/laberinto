@@ -12,22 +12,52 @@
     <p id="instrucciones">Arrastra el objeto 🗑️ hasta la caneca. ¡No toques las paredes!</p>
 
     <div id="laberinto">
-      <!-- Paredes -->
-      <div class="pared" style="top: 0;   left: 0;   width: 500px; height: 20px;"></div>
-      <div class="pared" style="top: 0;   left: 0;   width: 20px;  height: 300px;"></div>
-      <div class="pared" style="top: 0;   left: 480px; width: 20px;  height: 300px;"></div>
-      <div class="pared" style="top: 280px; left: 0;   width: 500px; height: 20px;"></div>
+      <!-- ===== BORDES EXTERNOS ===== -->
+      <div class="pared" style="top: 0;    left: 0;    width: 800px; height: 20px;"></div>
+      <div class="pared" style="top: 0;    left: 0;    width: 20px;  height: 600px;"></div>
+      <div class="pared" style="top: 0;    left: 780px; width: 20px; height: 600px;"></div>
+      <div class="pared" style="top: 580px; left: 0;    width: 800px; height: 20px;"></div>
 
-      <div class="pared" style="top: 80px;  left: 20px;  width: 300px; height: 20px;"></div>
-      <div class="pared" style="top: 80px;  left: 300px; width: 20px;  height: 150px;"></div>
-      <div class="pared" style="top: 200px; left: 180px; width: 320px; height: 20px;"></div>
-      <div class="pared" style="top: 140px; left: 180px; width: 20px;  height: 80px;"></div>
+      <!-- ===== PAREDES INTERNAS (diseño del laberinto) ===== -->
 
-      <!-- Objeto arrastrable -->
+      <!-- Fila superior -->
+      <div class="pared" style="top: 20px;  left: 100px; width: 20px;  height: 120px;"></div>
+      <div class="pared" style="top: 120px; left: 100px; width: 180px; height: 20px;"></div>
+      <div class="pared" style="top: 20px;  left: 260px; width: 20px;  height: 220px;"></div>
+      <div class="pared" style="top: 20px;  left: 380px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 100px; left: 380px; width: 200px; height: 20px;"></div>
+      <div class="pared" style="top: 20px;  left: 560px; width: 20px;  height: 260px;"></div>
+      <div class="pared" style="top: 20px;  left: 660px; width: 20px;  height: 140px;"></div>
+      <div class="pared" style="top: 140px; left: 660px; width: 120px; height: 20px;"></div>
+
+      <!-- Zona media -->
+      <div class="pared" style="top: 200px; left: 20px;  width: 160px; height: 20px;"></div>
+      <div class="pared" style="top: 200px; left: 20px;  width: 20px;  height: 160px;"></div>
+      <div class="pared" style="top: 340px; left: 20px;  width: 220px; height: 20px;"></div>
+      <div class="pared" style="top: 260px; left: 200px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 260px; left: 300px; width: 180px; height: 20px;"></div>
+      <div class="pared" style="top: 260px; left: 460px; width: 20px;  height: 140px;"></div>
+      <div class="pared" style="top: 380px; left: 380px; width: 100px; height: 20px;"></div>
+      <div class="pared" style="top: 380px; left: 300px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 460px; left: 300px; width: 220px; height: 20px;"></div>
+      <div class="pared" style="top: 380px; left: 560px; width: 20px;  height: 120px;"></div>
+      <div class="pared" style="top: 380px; left: 660px; width: 120px; height: 20px;"></div>
+
+      <!-- Zona inferior -->
+      <div class="pared" style="top: 480px; left: 20px;  width: 140px; height: 20px;"></div>
+      <div class="pared" style="top: 480px; left: 20px;  width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 480px; left: 200px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 480px; left: 380px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 480px; left: 460px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 480px; left: 560px; width: 20px;  height: 100px;"></div>
+
+      <!-- ===== OBJETO ARRASTRABLE ===== -->
       <div id="objeto">🗑️</div>
 
-      <!-- Meta -->
-      <div id="meta">🏁</div>
+      <!-- ===== CANECA (META) ===== -->
+      <div id="meta">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933263.png" alt="Caneca de basura">
+      </div>
     </div>
   </div>
 
@@ -41,7 +71,7 @@
   <!-- Pantalla de victoria -->
   <div id="ganaste" class="pantalla oculto">
     <h2>🎉 ¡Ganaste!</h2>
-    <p>Llevaste la basura a la caneca</p>
+    <p>¡Llevaste la basura a la caneca!</p>
     <button onclick="reiniciar()">Jugar otra vez</button>
   </div>
 
