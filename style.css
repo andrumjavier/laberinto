@@ -1,4 +1,8 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -11,7 +15,9 @@ body {
   padding: 20px;
 }
 
-.oculto { display: none !important; }
+.oculto {
+  display: none !important;
+}
 
 /* ====== MENÚ Y PANTALLAS ====== */
 .pantalla {
@@ -28,9 +34,20 @@ body {
   text-align: center;
 }
 
-.pantalla h1 { font-size: 42px; margin-bottom: 10px; }
-.pantalla h2 { font-size: 48px; }
-.pantalla p { font-size: 18px; color: #cbd5e1; max-width: 500px; }
+.pantalla h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.pantalla h2 {
+  font-size: 48px;
+}
+
+.pantalla p {
+  font-size: 18px;
+  color: #cbd5e1;
+  max-width: 500px;
+}
 
 .botones-menu {
   display: flex;
@@ -51,13 +68,27 @@ body {
   min-width: 220px;
 }
 
-.pantalla button:hover { background: #2563eb; transform: scale(1.03); }
+.pantalla button:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
 
 /* ====== JUEGO ====== */
-#juego { text-align: center; }
+#juego {
+  text-align: center;
+}
 
-#juego h1 { margin-bottom: 8px; font-size: 26px; color: #60a5fa; }
-#instrucciones { margin-bottom: 18px; color: #94a3b8; font-size: 14px; }
+#juego h1 {
+  margin-bottom: 8px;
+  font-size: 26px;
+  color: #60a5fa;
+}
+
+#instrucciones {
+  margin-bottom: 18px;
+  color: #94a3b8;
+  font-size: 14px;
+}
 
 #laberinto {
   position: relative;
@@ -89,7 +120,10 @@ body {
   transition: transform 0.05s;
 }
 
-#objeto:active { cursor: grabbing; transform: scale(1.1); }
+#objeto:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
 
 #meta {
   position: absolute;
@@ -117,7 +151,9 @@ body {
   cursor: pointer;
 }
 
-#btn-menu:hover { background: #64748b; }
+#btn-menu:hover {
+  background: #64748b;
+}
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 850px) {
@@ -126,5 +162,17 @@ body {
     height: 68vw;
     max-width: 800px;
     max-height: 600px;
+  }
+
+  .pantalla h1 {
+    font-size: 30px;
+  }
+
+  .pantalla h2 {
+    font-size: 36px;
+  }
+
+  .pantalla p {
+    font-size: 16px;
   }
 }
