@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esquiva Obstáculos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MENÚ -->
+  <div id="menu" class="pantalla">
+    <h1>🏃 Esquiva Obstáculos</h1>
+    <p>Muévete con <strong>←</strong> y <strong>→</strong> para esquivar los objetos que caen.</p>
+    <p>Cada segundo sobrevivido suma <strong>1 punto</strong>. ¡Sobrevive lo más posible!</p>
+    <button onclick="iniciarJuego()">▶ Iniciar partida</button>
+    <button onclick="window.location.href='../index.html'" class="btn-volver">🏠 Volver al inicio</button>
+  </div>
+
+  <!-- JUEGO -->
+  <div id="juego" class="oculto">
+    <div id="hud">
+      <span>⏱ <span id="tiempo">0</span>s</span>
+      <span>🏆 <span id="puntos">0</span></span>
+      <span>🥇 Récord: <span id="record">0</span></span>
+    </div>
+
+    <div id="cancha">
+      <div id="jugador">🧑</div>
+      <!-- Los obstáculos se generan desde JavaScript -->
+    </div>
+
+    <p id="ayuda">← → para moverte · Espacio para pausar</p>
+    <button id="btn-menu" onclick="volverAlMenu()">⬅ Volver al menú</button>
+  </div>
+
+  <!-- GAME OVER -->
+  <div id="gameover" class="pantalla oculto">
+    <h2>💥 ¡Game Over!</h2>
+    <p>Sobreviviste <strong id="tiempo-final">0</strong> segundos</p>
+    <p>Puntuación: <strong id="puntos-final">0</strong></p>
+    <p id="mensaje-record"></p>
+    <button onclick="iniciarJuego()">🔄 Jugar otra vez</button>
+    <button onclick="volverAlMenu()">🏠 Menú principal</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
