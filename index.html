@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laberinto - Lleva la basura a la caneca</title>
+  <title>Laberinto - Lleva la botella a la caneca</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="juego">
-    <h1>♻️ Lleva la basura a la caneca</h1>
-    <p id="instrucciones">Arrastra el objeto 🗑️ hasta la caneca. ¡No toques las paredes!</p>
+    <h1>♻️ Lleva la botella a la caneca</h1>
+    <p id="instrucciones">Arrastra la botella 🥤 hasta la caneca. ¡No toques las paredes!</p>
 
     <div id="laberinto">
       <!-- ===== BORDES EXTERNOS ===== -->
@@ -18,43 +18,43 @@
       <div class="pared" style="top: 0;    left: 780px; width: 20px; height: 600px;"></div>
       <div class="pared" style="top: 580px; left: 0;    width: 800px; height: 20px;"></div>
 
-      <!-- ===== PAREDES INTERNAS (diseño del laberinto) ===== -->
+      <!-- ===== PAREDES INTERNAS ===== -->
+      <!-- Diseño con pasillos anchos (80px mínimo entre paredes) -->
 
-      <!-- Fila superior -->
-      <div class="pared" style="top: 20px;  left: 100px; width: 20px;  height: 120px;"></div>
-      <div class="pared" style="top: 120px; left: 100px; width: 180px; height: 20px;"></div>
-      <div class="pared" style="top: 20px;  left: 260px; width: 20px;  height: 220px;"></div>
-      <div class="pared" style="top: 20px;  left: 380px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 100px; left: 380px; width: 200px; height: 20px;"></div>
-      <div class="pared" style="top: 20px;  left: 560px; width: 20px;  height: 260px;"></div>
-      <div class="pared" style="top: 20px;  left: 660px; width: 20px;  height: 140px;"></div>
-      <div class="pared" style="top: 140px; left: 660px; width: 120px; height: 20px;"></div>
+      <!-- Bloque superior izquierdo -->
+      <div class="pared" style="top: 20px;  left: 140px; width: 20px;  height: 180px;"></div>
+      <div class="pared" style="top: 180px; left: 140px; width: 200px; height: 20px;"></div>
 
-      <!-- Zona media -->
-      <div class="pared" style="top: 200px; left: 20px;  width: 160px; height: 20px;"></div>
-      <div class="pared" style="top: 200px; left: 20px;  width: 20px;  height: 160px;"></div>
-      <div class="pared" style="top: 340px; left: 20px;  width: 220px; height: 20px;"></div>
-      <div class="pared" style="top: 260px; left: 200px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 260px; left: 300px; width: 180px; height: 20px;"></div>
-      <div class="pared" style="top: 260px; left: 460px; width: 20px;  height: 140px;"></div>
-      <div class="pared" style="top: 380px; left: 380px; width: 100px; height: 20px;"></div>
-      <div class="pared" style="top: 380px; left: 300px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 460px; left: 300px; width: 220px; height: 20px;"></div>
-      <div class="pared" style="top: 380px; left: 560px; width: 20px;  height: 120px;"></div>
-      <div class="pared" style="top: 380px; left: 660px; width: 120px; height: 20px;"></div>
+      <!-- Bloque superior central -->
+      <div class="pared" style="top: 20px;  left: 420px; width: 20px;  height: 140px;"></div>
+      <div class="pared" style="top: 140px; left: 420px; width: 180px; height: 20px;"></div>
 
-      <!-- Zona inferior -->
-      <div class="pared" style="top: 480px; left: 20px;  width: 140px; height: 20px;"></div>
-      <div class="pared" style="top: 480px; left: 20px;  width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 480px; left: 200px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 480px; left: 380px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 480px; left: 460px; width: 20px;  height: 100px;"></div>
-      <div class="pared" style="top: 480px; left: 560px; width: 20px;  height: 100px;"></div>
+      <!-- Bloque superior derecho -->
+      <div class="pared" style="top: 20px;  left: 660px; width: 20px;  height: 220px;"></div>
+      <div class="pared" style="top: 220px; left: 660px; width: 100px; height: 20px;"></div>
 
-      <!-- ===== OBJETO ARRASTRABLE ===== -->
-      <div id="objeto">🗑️</div>
+      <!-- Bloque medio izquierdo -->
+      <div class="pared" style="top: 260px; left: 20px;  width: 160px; height: 20px;"></div>
+      <div class="pared" style="top: 260px; left: 160px; width: 20px;  height: 160px;"></div>
+      <div class="pared" style="top: 400px; left: 20px;  width: 160px; height: 20px;"></div>
 
-      <!-- ===== CANECA (META) ===== -->
+      <!-- Bloque medio central -->
+      <div class="pared" style="top: 260px; left: 340px; width: 20px;  height: 180px;"></div>
+      <div class="pared" style="top: 420px; left: 340px; width: 200px; height: 20px;"></div>
+
+      <!-- Bloque medio derecho -->
+      <div class="pared" style="top: 300px; left: 540px; width: 20px;  height: 160px;"></div>
+      <div class="pared" style="top: 300px; left: 540px; width: 140px; height: 20px;"></div>
+
+      <!-- Bloque inferior -->
+      <div class="pared" style="top: 480px; left: 20px;  width: 100px; height: 20px;"></div>
+      <div class="pared" style="top: 480px; left: 240px; width: 20px;  height: 100px;"></div>
+      <div class="pared" style="top: 480px; left: 440px; width: 20px;  height: 100px;"></div>
+
+      <!-- ===== OBJETO ARRASTRABLE (BOTELLA) ===== -->
+      <div id="objeto">🥤</div>
+
+      <!-- ===== CANECA (META) - FIJA ===== -->
       <div id="meta">
         <img src="https://cdn-icons-png.flaticon.com/512/2933/2933263.png" alt="Caneca de basura">
       </div>
@@ -71,7 +71,7 @@
   <!-- Pantalla de victoria -->
   <div id="ganaste" class="pantalla oculto">
     <h2>🎉 ¡Ganaste!</h2>
-    <p>¡Llevaste la basura a la caneca!</p>
+    <p>¡Llevaste la botella a la caneca!</p>
     <button onclick="reiniciar()">Jugar otra vez</button>
   </div>
 
