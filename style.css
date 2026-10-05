@@ -18,8 +18,8 @@ h1 { margin-bottom: 10px; font-size: 24px; }
 
 #laberinto {
   position: relative;
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   background: #f8fafc;
   border: 3px solid #0f172a;
   border-radius: 8px;
@@ -35,12 +35,11 @@ h1 { margin-bottom: 10px; font-size: 24px; }
 
 #objeto {
   position: absolute;
-  top: 240px;
-  left: 40px;
+  top: 30px;
+  left: 30px;
   font-size: 32px;
   cursor: grab;
   user-select: none;
-  transition: transform 0.05s;
   z-index: 10;
 }
 
@@ -48,10 +47,16 @@ h1 { margin-bottom: 10px; font-size: 24px; }
 
 #meta {
   position: absolute;
-  top: 240px;
-  left: 440px;
-  font-size: 32px;
+  top: 500px;
+  left: 700px;
+  width: 60px;
+  height: 60px;
   user-select: none;
+}
+#meta img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Pantallas de resultado */
