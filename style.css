@@ -1,7 +1,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #1e293b;
   color: white;
   display: flex;
@@ -11,10 +11,53 @@ body {
   padding: 20px;
 }
 
+.oculto { display: none !important; }
+
+/* ====== MENÚ Y PANTALLAS ====== */
+.pantalla {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.98);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 100;
+  padding: 20px;
+  text-align: center;
+}
+
+.pantalla h1 { font-size: 42px; margin-bottom: 10px; }
+.pantalla h2 { font-size: 48px; }
+.pantalla p { font-size: 18px; color: #cbd5e1; max-width: 500px; }
+
+.botones-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pantalla button {
+  padding: 14px 28px;
+  font-size: 18px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  min-width: 220px;
+}
+
+.pantalla button:hover { background: #2563eb; transform: scale(1.03); }
+
+/* ====== JUEGO ====== */
 #juego { text-align: center; }
 
-h1 { margin-bottom: 10px; font-size: 24px; }
-#instrucciones { margin-bottom: 20px; color: #94a3b8; font-size: 14px; }
+#juego h1 { margin-bottom: 8px; font-size: 26px; color: #60a5fa; }
+#instrucciones { margin-bottom: 18px; color: #94a3b8; font-size: 14px; }
 
 #laberinto {
   position: relative;
@@ -22,7 +65,7 @@ h1 { margin-bottom: 10px; font-size: 24px; }
   height: 600px;
   background: #f8fafc;
   border: 3px solid #0f172a;
-  border-radius: 8px;
+  border-radius: 10px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -35,56 +78,53 @@ h1 { margin-bottom: 10px; font-size: 24px; }
 
 #objeto {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 32px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
   cursor: grab;
   user-select: none;
   z-index: 10;
+  transition: transform 0.05s;
 }
 
-#objeto:active { cursor: grabbing; }
+#objeto:active { cursor: grabbing; transform: scale(1.1); }
 
 #meta {
   position: absolute;
-  top: 500px;
-  left: 700px;
   width: 60px;
   height: 60px;
   user-select: none;
+  z-index: 5;
+  pointer-events: none;
 }
+
 #meta img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Pantallas de resultado */
-.pantalla {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  z-index: 100;
-}
-
-.pantalla.oculto { display: none; }
-
-.pantalla h2 { font-size: 48px; }
-
-.pantalla button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background: #3b82f6;
+#btn-menu {
+  margin-top: 18px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background: #475569;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-.pantalla button:hover { background: #2563eb; }
+#btn-menu:hover { background: #64748b; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 850px) {
+  #laberinto {
+    width: 90vw;
+    height: 68vw;
+    max-width: 800px;
+    max-height: 600px;
+  }
+}
