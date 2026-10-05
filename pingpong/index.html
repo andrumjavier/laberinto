@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ping Pong - 2 Jugadores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="menu" class="pantalla">
+    <h1>🏓 Ping Pong</h1>
+    <p>Jugador 1: <strong>W</strong> (arriba) y <strong>S</strong> (abajo)</p>
+    <p>Jugador 2: <strong>↑</strong> (arriba) y <strong>↓</strong> (abajo)</p>
+    <p>El primero en llegar a <strong>5 puntos</strong> gana.</p>
+    <button onclick="iniciarJuego()">▶ Iniciar partida</button>
+    <button onclick="window.location.href='../index.html'" class="btn-volver">🏠 Volver al inicio</button>
+  </div>
+
+  <div id="juego" class="oculto">
+    <div id="marcador">
+      <span id="puntos1">0</span>
+      <span id="separador">:</span>
+      <span id="puntos2">0</span>
+    </div>
+
+    <div id="cancha">
+      <div class="linea-central"></div>
+      <div id="paleta1" class="paleta"></div>
+      <div id="paleta2" class="paleta"></div>
+      <div id="pelota"></div>
+    </div>
+
+    <p id="ayuda">W/S para Jugador 1 · ↑/↓ para Jugador 2 · Espacio para pausar</p>
+    <button id="btn-menu" onclick="volverAlMenu()">⬅ Volver al menú</button>
+  </div>
+
+  <div id="ganador" class="pantalla oculto">
+    <h2 id="texto-ganador">¡Jugador 1 gana!</h2>
+    <button onclick="iniciarJuego()">🔄 Jugar otra vez</button>
+    <button onclick="volverAlMenu()">🏠 Menú principal</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
